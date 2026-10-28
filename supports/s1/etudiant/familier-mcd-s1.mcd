@@ -1,0 +1,35 @@
+% « Le Familier a dessiné un MCD » (Séance 1) : MCD réellement produit par un Familier à partir d'un prompt naïf.
+% schéma piégé
+% Le texte ci-dessous est celui de la réponse, à trois corrections de syntaxe près, sans lesquelles Mocodo
+% refuse de dessiner le schéma : voir le support de Séance (prompt et réponse complète).
+% Seule la disposition des lignes a été réarrangée pour la projection : aucune ligne n'a été modifiée.
+% tables attendues : clan, heros, ile, joueur, lignee, obtenir, saison, tresor, vie, zone
+LIGNÉE: id_lignee, nom_lignee
+CHOISIR, 0N LIGNÉE, 11 HÉROS
+MENTORER, 0N [mentor] HÉROS, 01 [apprenti] HÉROS
+CRÉER, 0N JOUEUR, 11 HÉROS
+JOUEUR: id_joueur, pseudo, email, pays, date_inscription
+
+CLAN: id_clan, nom_clan, devise, date_fondation
+APPARTENIR, 0N CLAN, 01 HÉROS: date_entree
+HÉROS: id_heros, nom_heros, niveau, date_creation, element_maitrise, furtivite, solidite_rempart, nb_recettes
+PRENDRE, 0N HÉROS, 01 VIE
+:
+
+REPAIRE, 0N ÎLE, 11 CLAN
+OBTENIR, 0N HÉROS, 0N TRÉSOR, 0N ÎLE: date_obtention
+POSSÉDER, 0N HÉROS, 01 TRÉSOR
+PERDRE, 0N HÉROS, 11 VIE
+VIE: id_vie, numero_vie_perdue, moment_perte, cause
+
+:
+ÎLE: id_ile [INTEGER], nom_ile [VARCHAR(40)]
+TRÉSOR: id_tresor, nom_tresor, nature, rarete
+SURVENIR, 0N ZONE, 11 VIE
+PENDANT, 0N SAISON, 11 VIE
+
+:
+:
+COMPRENDRE, 1N ÎLE, _11 ZONE
+ZONE: nom_zone [VARCHAR(40)]
+SAISON: id_saison [INTEGER], nom_saison [VARCHAR(40)]

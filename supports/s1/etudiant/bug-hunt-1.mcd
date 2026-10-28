@@ -1,0 +1,15 @@
+% Bug Hunt n°1 de la Séance 1 : le MCD de Félicia dessiné trop vite par un stagiaire du studio.
+% schéma piégé
+% Il est projeté et distribué dans le support de Séance ; on le lit et on l'annote, sans le ressaisir.
+% tables attendues : joueur, clan, ile, tresor
+JOUEUR: id_joueur [INTEGER], pseudo [VARCHAR(40)], courriel [VARCHAR(120)], nom_heros [VARCHAR(60)], lignée [VARCHAR(30)], vies_restantes [SMALLINT]
+ADHÉRER, 0N JOUEUR, 11 CLAN: date_adhesion [DATE]
+CLAN: id_clan [INTEGER], nom_clan [VARCHAR(60)], devise [VARCHAR(160)]
+
+OBTENIR, 0N JOUEUR, 11 TRÉSOR, 0N ÎLE: date_obtention [TIMESTAMP]
+:
+ABRITER, 0N CLAN, 11 ÎLE
+
+TRÉSOR: id_tresor [INTEGER], nom_tresor [VARCHAR(80)], nature [VARCHAR(20)], rareté [VARCHAR(12)]
+:
+ÎLE: id_ile [INTEGER], nom_ile [VARCHAR(40)]

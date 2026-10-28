@@ -1,0 +1,7 @@
+% Boss de la Séance 1, règle 3 : le fragment de départ, déjà dessiné dans l'énoncé (l'appartenance d'un Héros à un Clan).
+% L'étudiant y ajoute le bannissement ; le corrigé est supports/s1/formateur/boss-1-bannir.mcd.
+% Mocodo ne crée pas de table pour une entité réduite à son identifiant.
+% tables attendues : heros
+HÉROS: id_heros [INTEGER]
+APPARTENIR, 01 HÉROS, 1N CLAN: date_adhesion [DATE]
+CLAN: id_clan [INTEGER]

@@ -1,0 +1,268 @@
+# Séance 3 (ticket 04) : les quatre démonstrations du tour d'horizon (L33), étape par étape.
+# Chaque requête doit figurer telle quelle dans son script (extrait_de) ; les écritures sont suivies de leur remise en état.
+# Format : voir outils/manifeste.py. Les valeurs dépendent de la graine de donnees/generer.py.
+
+# --- 1. MongoDB : les Trésors ------------------------------------------------------------------------------
+[[requete]]
+id = "s3-demo-mongo-griffe-d-aube"
+base = "mongo"
+extrait_de = "demonstrations/s3/1-mongo-tresors.js"
+requete = "db.tresors.findOne({_id: 12})"
+contient = "Griffe d'Aube"
+
+[[requete]]
+id = "s3-demo-mongo-inventaire-moustique"
+base = "mongo"
+extrait_de = "demonstrations/s3/1-mongo-tresors.js"
+requete = 'db.tresors.find({"proprietaire.id_heros": 3426}, {nom: 1, nature: 1, attributs: 1})'
+lignes = 7
+
+[[requete]]
+id = "s3-demo-mongo-grimoires-griffe-de-foudre"
+base = "mongo"
+extrait_de = "demonstrations/s3/1-mongo-tresors.js"
+requete = 'db.tresors.countDocuments({nature: "grimoire", "attributs.sorts": "Griffe de foudre"})'
+valeur = "1550"
+
+[[requete]]
+id = "s3-demo-mongo-degats-par-element"
+base = "mongo"
+extrait_de = "demonstrations/s3/1-mongo-tresors.js"
+requete = 'db.tresors.aggregate([{$match: {nature: "arme"}}, {$group: {_id: "$attributs.element", degats_moyens: {$avg: "$attributs.degats"}, nombre: {$sum: 1}}}, {$sort: {nombre: -1}}])'
+lignes = 6
+
+[[requete]]
+id = "s3-demo-mongo-ajout-eclat"
+base = "mongo"
+extrait_de = "demonstrations/s3/1-mongo-tresors.js"
+requete = 'db.tresors.updateOne({_id: 12}, {$set: {"attributs.eclat": "aube dorée"}})'
+contient = '"modifiedCount":1'
+
+[[requete]]
+id = "s3-demo-mongo-eclat-visible"
+base = "mongo"
+extrait_de = "demonstrations/s3/1-mongo-tresors.js"
+requete = "db.tresors.findOne({_id: 12}, {nom: 1, attributs: 1})"
+contient = "aube dorée"
+
+[[requete]]
+id = "s3-demo-mongo-nom-du-clan-recopie"
+base = "mongo"
+extrait_de = "demonstrations/s3/1-mongo-tresors.js"
+requete = 'db.heros.countDocuments({"clan.id_clan": 1})'
+valeur = "39"
+
+[[requete]]
+id = "s3-demo-mongo-remise-en-etat"
+base = "mongo"
+extrait_de = "demonstrations/s3/1-mongo-tresors.js"
+requete = 'db.tresors.updateOne({_id: 12}, {$unset: {"attributs.eclat": ""}})'
+contient = '"modifiedCount":1'
+
+# --- 2. Redis : classement temps réel et compteur de Vies ----------------------------------------------------
+[[requete]]
+id = "s3-demo-redis-fiche-moustique"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "HGETALL heros:3426"
+lignes = 16
+
+[[requete]]
+id = "s3-demo-redis-top-10"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "ZREVRANGE classement:saison:4 0 9 WITHSCORES"
+lignes = 20
+
+[[requete]]
+id = "s3-demo-redis-rang-avant"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "ZREVRANK classement:saison:4 3426"
+valeur = "608"
+
+[[requete]]
+id = "s3-demo-redis-gain-de-renommee"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "ZINCRBY classement:saison:4 250 3426"
+valeur = "1733"
+
+[[requete]]
+id = "s3-demo-redis-rang-apres"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "ZREVRANK classement:saison:4 3426"
+valeur = "369"
+
+[[requete]]
+id = "s3-demo-redis-perte-d-une-vie"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "HINCRBY heros:3426 vies_restantes -1"
+valeur = "7"
+
+[[requete]]
+id = "s3-demo-redis-convalescence"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "SET heros:3426:convalescence 1 EX 60"
+valeur = "OK"
+
+[[requete]]
+id = "s3-demo-redis-convalescence-ttl"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "TTL heros:3426:convalescence"
+lignes = 1
+
+[[requete]]
+id = "s3-demo-redis-convalescence-existe"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "EXISTS heros:3426:convalescence"
+valeur = "1"
+
+[[requete]]
+id = "s3-demo-redis-membres-du-clan"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "SMEMBERS clan:1:membres"
+lignes = 39
+
+[[requete]]
+id = "s3-demo-redis-remise-en-etat-renommee"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "ZINCRBY classement:saison:4 -250 3426"
+valeur = "1483"
+
+[[requete]]
+id = "s3-demo-redis-remise-en-etat-vies"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "HINCRBY heros:3426 vies_restantes 1"
+valeur = "8"
+
+[[requete]]
+id = "s3-demo-redis-remise-en-etat-convalescence"
+base = "redis"
+extrait_de = "demonstrations/s3/2-redis-classement-vies.redis"
+requete = "DEL heros:3426:convalescence"
+valeur = "1"
+
+# --- 3. Cassandra : la télémétrie des Vies perdues -----------------------------------------------------------
+[[requete]]
+id = "s3-demo-cassandra-cle-de-partition"
+base = "cassandra"
+extrait_de = "demonstrations/s3/3-cassandra-telemetrie.cql"
+requete = "DESCRIBE TABLE vies_par_ile;"
+contient = "PRIMARY KEY ((id_ile, id_saison), zone, date_heure, id_heros, numero)"
+
+[[requete]]
+id = "s3-demo-cassandra-vies-par-zone-brume"
+base = "cassandra"
+extrait_de = "demonstrations/s3/3-cassandra-telemetrie.cql"
+requete = "SELECT zone, count(*) FROM vies_par_ile WHERE id_ile = 1 AND id_saison = 4 GROUP BY zone;"
+lignes = 4
+
+[[requete]]
+id = "s3-demo-cassandra-dernieres-vies-falaise"
+base = "cassandra"
+extrait_de = "demonstrations/s3/3-cassandra-telemetrie.cql"
+requete = "SELECT zone, date_heure, id_heros, cause FROM vies_par_ile WHERE id_ile = 1 AND id_saison = 4 AND zone = 'Falaise des Soupirs' ORDER BY zone DESC, date_heure DESC LIMIT 5;"
+lignes = 5
+
+[[requete]]
+id = "s3-demo-cassandra-journal-moustique"
+base = "cassandra"
+extrait_de = "demonstrations/s3/3-cassandra-telemetrie.cql"
+requete = "SELECT numero, date_heure, ile, zone, cause FROM vies_par_heros WHERE id_heros = 3426 AND id_saison = 4;"
+lignes = 1
+
+[[requete]]
+id = "s3-demo-cassandra-double-ecriture"
+base = "cassandra"
+extrait_de = "demonstrations/s3/3-cassandra-telemetrie.cql"
+requete = "BEGIN BATCH INSERT INTO vies_par_heros (id_heros, id_saison, numero, date_heure, ile, zone, cause) VALUES (3426, 4, 2, '2026-11-13 08:40:00+0000', 'Brume', 'Falaise des Soupirs', 'chute dans le vide'); INSERT INTO vies_par_ile (id_ile, id_saison, zone, date_heure, id_heros, numero, cause, id_clan) VALUES (1, 4, 'Falaise des Soupirs', '2026-11-13 08:40:00+0000', 3426, 2, 'chute dans le vide', 1); APPLY BATCH;"
+lignes = 0
+
+[[requete]]
+id = "s3-demo-cassandra-journal-moustique-apres"
+base = "cassandra"
+extrait_de = "demonstrations/s3/3-cassandra-telemetrie.cql"
+requete = "SELECT numero, date_heure, ile, zone, cause FROM vies_par_heros WHERE id_heros = 3426 AND id_saison = 4;"
+lignes = 2
+
+[[requete]]
+id = "s3-demo-cassandra-limite-group-by"
+base = "cassandra"
+extrait_de = "demonstrations/s3/3-cassandra-telemetrie.cql"
+requete = "SELECT cause, count(*) FROM vies_par_ile WHERE id_ile = 1 AND id_saison = 4 GROUP BY cause;"
+erreur = "Group by is currently only supported on the columns of the PRIMARY KEY"
+
+[[requete]]
+id = "s3-demo-cassandra-limite-allow-filtering"
+base = "cassandra"
+extrait_de = "demonstrations/s3/3-cassandra-telemetrie.cql"
+requete = "SELECT * FROM vies_par_ile WHERE cause = 'duel';"
+erreur = "ALLOW FILTERING"
+
+[[requete]]
+id = "s3-demo-cassandra-remise-en-etat"
+base = "cassandra"
+extrait_de = "demonstrations/s3/3-cassandra-telemetrie.cql"
+requete = "BEGIN BATCH DELETE FROM vies_par_heros WHERE id_heros = 3426 AND id_saison = 4 AND numero = 2; DELETE FROM vies_par_ile WHERE id_ile = 1 AND id_saison = 4 AND zone = 'Falaise des Soupirs' AND date_heure = '2026-11-13 08:40:00+0000' AND id_heros = 3426 AND numero = 2; APPLY BATCH;"
+lignes = 0
+
+[[requete]]
+id = "s3-demo-cassandra-journal-moustique-remis"
+base = "cassandra"
+requete = "SELECT numero FROM vies_par_heros WHERE id_heros = 3426 AND id_saison = 4"
+lignes = 1
+
+# --- 4. Neo4j : le réseau des Clans --------------------------------------------------------------------------
+[[requete]]
+id = "s3-demo-neo4j-allies"
+base = "neo4j"
+extrait_de = "demonstrations/s3/4-neo4j-clans.cypher"
+requete = "MATCH (c:Clan {id_clan: 1})-[:ALLIE_A]-(allie:Clan) RETURN allie.nom;"
+lignes = 3
+
+[[requete]]
+id = "s3-demo-neo4j-allies-d-allies"
+base = "neo4j"
+extrait_de = "demonstrations/s3/4-neo4j-clans.cypher"
+requete = "MATCH (c:Clan {id_clan: 1})-[:ALLIE_A*2]-(autre:Clan) WHERE autre <> c AND NOT (c)-[:ALLIE_A]-(autre) RETURN DISTINCT autre.nom;"
+lignes = 5
+
+[[requete]]
+id = "s3-demo-postgres-allies-d-allies"
+base = "postgres"
+extrait_de = "demonstrations/s3/4-postgres-alliances.sql"
+requete = """WITH a AS (SELECT id_clan_1 AS x, id_clan_2 AS y FROM alliance UNION SELECT id_clan_2, id_clan_1 FROM alliance)
+SELECT DISTINCT c.nom
+FROM a a1 JOIN a a2 ON a2.x = a1.y JOIN clan c ON c.id_clan = a2.y
+WHERE a1.x = 1 AND a2.y <> 1 AND a2.y NOT IN (SELECT y FROM a WHERE x = 1);"""
+lignes = 5
+
+[[requete]]
+id = "s3-demo-neo4j-chemin-diplomatique"
+base = "neo4j"
+extrait_de = "demonstrations/s3/4-neo4j-clans.cypher"
+requete = "MATCH p = shortestPath((a:Clan {id_clan: 1})-[:ALLIE_A*]-(b:Clan {id_clan: 2})) RETURN length(p) AS alliances, [c IN nodes(p) | c.nom] AS chemin;"
+contient = """6, ["Le Cercle de l'Aube", "Les Pattes des Étoiles Filantes", "Les Gardiens du Velours\""""
+
+[[requete]]
+id = "s3-demo-neo4j-espions-possibles"
+base = "neo4j"
+extrait_de = "demonstrations/s3/4-neo4j-clans.cypher"
+requete = "MATCH (j:Joueur)-[:INCARNE]->(:Heros)-[:MEMBRE_DE]->(c:Clan {id_clan: 1}), (j)-[:INCARNE]->(:Heros)-[:MEMBRE_DE]->(autre:Clan) WHERE autre <> c AND NOT (c)-[:ALLIE_A]-(autre) RETURN count(DISTINCT j) AS joueurs;"
+valeur = "22"
+
+[[requete]]
+id = "s3-demo-neo4j-duels-contre-moustique"
+base = "neo4j"
+extrait_de = "demonstrations/s3/4-neo4j-clans.cypher"
+requete = "MATCH (v:Heros)-[r:A_PRIS_UNE_VIE_A]->(:Heros {id_heros: 3426}) RETURN v.nom, r.fois;"
+lignes = 2

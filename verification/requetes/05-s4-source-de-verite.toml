@@ -1,0 +1,24 @@
+# Séance 4 (ticket 05) : l'encadré « À vérifier dans votre Codespace » du support (L41).
+# Une Vie perdue de Moustique le Gourmand (Héros 3426) dans la Saison 4 : la source PostgreSQL et ses deux copies concordent.
+# Format : voir outils/manifeste.py. Les valeurs dépendent de la graine de donnees/generer.py.
+
+[[requete]]
+id = "s4-source-vies-moustique"
+base = "postgres"
+extrait_de = "supports/s4/etudiant/support-seance-4.md"
+requete = "SELECT count(*) FROM vie_perdue WHERE id_heros = 3426 AND id_saison = 4"
+valeur = "1"
+
+[[requete]]
+id = "s4-copie-redis-vies-restantes-moustique"
+base = "redis"
+extrait_de = "supports/s4/etudiant/support-seance-4.md"
+requete = "HGET heros:3426 vies_restantes"
+valeur = "8"
+
+[[requete]]
+id = "s4-copie-cassandra-vies-moustique"
+base = "cassandra"
+extrait_de = "supports/s4/etudiant/support-seance-4.md"
+requete = "SELECT count(*) FROM vies_par_heros WHERE id_heros = 3426 AND id_saison = 4"
+valeur = "1"

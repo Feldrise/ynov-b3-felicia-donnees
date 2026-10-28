@@ -1,0 +1,98 @@
+# Requêtes du socle (ticket 01) : règles du cahier des charges et commandes citées dans les guides.
+# Format : voir outils/manifeste.py. Les valeurs dépendent de la graine de donnees/generer.py.
+
+[[requete]]
+id = "socle-pg-heros"                     # citée dans le guide Codespace (L06)
+base = "postgres"
+requete = "SELECT count(*) FROM heros"
+valeur = "7013"
+
+[[requete]]
+id = "socle-pg-joueurs-a-plusieurs-heros"
+base = "postgres"
+requete = "SELECT count(*) FROM (SELECT id_joueur FROM heros GROUP BY id_joueur HAVING count(*) > 1) x"
+valeur = "1945"
+
+[[requete]]
+id = "socle-pg-jamais-plus-de-9-vies"
+base = "postgres"
+requete = "SELECT id_heros, id_saison FROM vie_perdue GROUP BY id_heros, id_saison HAVING count(*) > 9"
+lignes = 0
+
+[[requete]]
+id = "socle-pg-heros-endormis-saison-4"
+base = "postgres"
+requete = "SELECT count(*) FROM (SELECT id_heros FROM vie_perdue WHERE id_saison = 4 GROUP BY id_heros HAVING count(*) = 9) x"
+valeur = "329"
+
+[[requete]]
+id = "socle-pg-mentor-autre-joueur"
+base = "postgres"
+requete = "SELECT a.id_heros FROM heros a JOIN heros m ON m.id_heros = a.id_mentor WHERE m.id_joueur = a.id_joueur OR m.niveau <= a.niveau"
+lignes = 0
+
+[[requete]]
+id = "socle-pg-chef-membre-de-son-clan"
+base = "postgres"
+requete = "SELECT c.id_clan FROM clan c JOIN heros h ON h.id_heros = c.id_heros_chef WHERE h.id_clan IS DISTINCT FROM c.id_clan"
+lignes = 0
+
+[[requete]]
+id = "socle-pg-bourse-jamais-negative"
+base = "postgres"
+requete = "SELECT id_heros FROM (SELECT id_heros, sum(montant) OVER (PARTITION BY id_heros ORDER BY date_heure, id_transaction) AS solde FROM transaction_pelotes) s WHERE solde < 0"
+lignes = 0
+
+[[requete]]
+id = "socle-pg-iles-selon-le-niveau"
+base = "postgres"
+requete = "SELECT id_heros FROM vie_perdue JOIN zone USING (id_zone) JOIN ile i USING (id_ile) JOIN heros h USING (id_heros) WHERE i.niveau_requis > h.niveau UNION ALL SELECT o.id_heros FROM obtention o JOIN ile i USING (id_ile) JOIN heros h USING (id_heros) WHERE i.niveau_requis > h.niveau"
+lignes = 0
+
+[[requete]]
+id = "socle-pg-zone-la-plus-meurtriere-de-brume"
+base = "postgres"
+requete = "SELECT z.nom FROM vie_perdue v JOIN zone z USING (id_zone) WHERE z.id_ile = 1 GROUP BY z.nom ORDER BY count(*) DESC LIMIT 1"
+valeur = "Falaise des Soupirs"
+
+[[requete]]
+id = "socle-mongo-tresors"
+base = "mongo"
+requete = "db.tresors.countDocuments()"
+valeur = "29253"
+
+[[requete]]
+id = "socle-mongo-legendaires-plusieurs-proprietaires"
+base = "mongo"
+requete = "db.tresors.find({rarete: 'légendaire', 'historique.1': {$exists: true}}, {nom: 1})"
+lignes = 446
+
+[[requete]]
+id = "socle-redis-classement-top-10"
+base = "redis"
+requete = "ZREVRANGE classement:saison:4 0 9"
+lignes = 10
+
+[[requete]]
+id = "socle-redis-vies-restantes"
+base = "redis"
+requete = "HGET heros:1 vies_restantes"
+valeur = "6"
+
+[[requete]]
+id = "socle-cassandra-vies-par-zone-brume"
+base = "cassandra"
+requete = "SELECT zone, count(*) FROM vies_par_ile WHERE id_ile = 1 AND id_saison = 4 GROUP BY zone"
+lignes = 4
+
+[[requete]]
+id = "socle-neo4j-joueurs-incarnent-heros"
+base = "neo4j"
+requete = "MATCH (:Joueur)-[:INCARNE]->(h:Heros) RETURN count(h)"
+valeur = "7013"
+
+[[requete]]
+id = "socle-neo4j-clans-a-deux-alliances"
+base = "neo4j"
+requete = "MATCH (c:Clan {id_clan: 1})-[:ALLIE_A*2]-(autre:Clan) WHERE autre <> c RETURN DISTINCT autre.id_clan"
+lignes = 5

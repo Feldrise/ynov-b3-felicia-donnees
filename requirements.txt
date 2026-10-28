@@ -1,0 +1,2 @@
+# Outils Python du formateur (contrôle B, schémas). Installés dans .venv par `make outils`.
+mocodo==4.3.3

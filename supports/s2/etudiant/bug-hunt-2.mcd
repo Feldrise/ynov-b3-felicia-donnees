@@ -1,0 +1,6 @@
+% Bug Hunt n°2 de la Séance 2 : la table « Inventaire » exportée telle quelle par l'outil interne du studio.
+% schéma piégé
+% Une seule entité, donc une seule table : une ligne par emplacement du sac d'un Héros, vide ou occupé.
+% Elle est projetée et distribuée dans le support de Séance, avec un extrait de ses lignes ; on ne la ressaisit pas.
+% tables attendues : inventaire
+INVENTAIRE: id_heros [INTEGER], _num_emplacement [SMALLINT], nom_heros [VARCHAR(60)], pseudo_joueur [VARCHAR(40)], courriel_joueur [VARCHAR(120)], id_clan [INTEGER], nom_clan [VARCHAR(60)], id_tresor [INTEGER], nom_tresor [VARCHAR(80)], nature [VARCHAR(20)], rareté [VARCHAR(12)], enchantements [VARCHAR(200)], date_rangement [TIMESTAMP]

@@ -1,0 +1,7 @@
+% Exemple de référence du guide Looping et Mocodo : le repaire d'un Clan.
+% À consulter pour retrouver la syntaxe ; rien à ressaisir pendant le Lancement.
+% L'Île y est réduite à son identifiant et à son nom, comme dans les éléments fournis de l'atelier.
+% tables attendues : clan, ile
+CLAN: id_clan [INTEGER], nom_clan [VARCHAR(60)], devise [VARCHAR(160)]
+ABRITER, 11 CLAN, 0N ÎLE
+ÎLE: id_ile [INTEGER], nom_ile [VARCHAR(40)]

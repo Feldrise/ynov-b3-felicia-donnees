@@ -1,0 +1,103 @@
+# Atelier de dénormalisation de la Séance 2 (ticket 03) : les quatre scripts de ateliers/s2/, rejoués dans l'ordre,
+# puis la mesure de l'effet attendu (contrôle A5). Format : voir outils/manifeste.py.
+# Les valeurs dépendent de la graine de donnees/generer.py ; le Héros de l'écran de profil est Sorbet Pelage-d'Or (8).
+
+[[requete]]
+id = "s2-profil-jointures"                    # script 1 : l'écran de profil, multi-jointures
+base = "postgres"
+extrait_de = "ateliers/s2/1-profil-jointures.sql"
+requete = '''
+SELECT h.id_heros, h.nom AS heros, j.pseudo AS joueur, l.nom AS lignee, h.niveau, h.renommee,
+       c.nom AS clan, m.nom AS mentor,
+       9 - (SELECT count(*) FROM vie_perdue v WHERE v.id_heros = h.id_heros AND v.id_saison = 4) AS vies_restantes,
+       (SELECT coalesce(sum(t.montant), 0) FROM transaction_pelotes t WHERE t.id_heros = h.id_heros) AS bourse,
+       (SELECT count(*) FROM tresor r WHERE r.id_heros_proprietaire = h.id_heros) AS nb_tresors
+FROM heros h
+JOIN joueur j ON j.id_joueur = h.id_joueur
+JOIN lignee l ON l.id_lignee = h.id_lignee
+LEFT JOIN clan c ON c.id_clan = h.id_clan
+LEFT JOIN heros m ON m.id_heros = h.id_mentor
+WHERE h.id_heros = 8'''
+contient = "8|Sorbet Pelage-d'Or|kawa_ronron593|Rôdeur d'ombre|5|123|Le Cercle du Velours|Patapouf Pelage-d'Or|6|4097|9"
+
+[[requete]]
+id = "s2-script-1-execute"                    # le script tel que l'étudiant le lance (avec EXPLAIN ANALYZE)
+base = "postgres"
+fichier = "ateliers/s2/1-profil-jointures.sql"
+contient = "Seq Scan on transaction_pelotes"
+
+[[requete]]
+id = "s2-script-2-table-denormalisee"         # script 2 : construit profil_heros, même résultat
+base = "postgres"
+fichier = "ateliers/s2/2-profil-table.sql"
+contient = "8|Sorbet Pelage-d'Or|kawa_ronron593|Rôdeur d'ombre|5|123|Le Cercle du Velours|Patapouf Pelage-d'Or|6|4097|9"
+
+[[requete]]
+id = "s2-profil-table-7013-lignes"
+base = "postgres"
+requete = "SELECT count(*) FROM profil_heros"
+valeur = "7013"
+
+[[requete]]
+id = "s2-script-3-vue-materialisee"           # script 3 : construit profil_heros_vue, même résultat
+base = "postgres"
+fichier = "ateliers/s2/3-profil-vue.sql"
+contient = "8|Sorbet Pelage-d'Or|kawa_ronron593|Rôdeur d'ombre|5|123|Le Cercle du Velours|Patapouf Pelage-d'Or|6|4097|9"
+
+[[requete]]
+id = "s2-profil-table-egale-jointures"        # la table et la vue reproduisent la requête pour tous les Héros
+base = "postgres"
+requete = "SELECT count(*) FROM profil_heros p JOIN profil_heros_vue v USING (id_heros) WHERE (p.*)::text <> (v.*)::text"
+valeur = "0"
+
+[[requete]]
+id = "s2-script-4-coherence"                  # script 4 : la table et la vue restent à 4097 après la quête
+base = "postgres"
+fichier = "ateliers/s2/4-coherence.sql"
+contient = "table dénormalisée|4097"
+
+[[requete]]
+id = "s2-script-4-annule"                     # la transaction du script 4 est annulée : la base est intacte
+base = "postgres"
+requete = "SELECT count(*) FROM transaction_pelotes"
+valeur = "518713"
+
+[[mesure]]
+id = "s2-profil-table-denormalisee"           # A5 : la table dénormalisée bat la requête multi-jointures
+base = "postgres"
+extrait_de = ["ateliers/s2/1-profil-jointures.sql", "ateliers/s2/2-profil-table.sql"]
+lente = '''
+SELECT h.id_heros, h.nom AS heros, j.pseudo AS joueur, l.nom AS lignee, h.niveau, h.renommee,
+       c.nom AS clan, m.nom AS mentor,
+       9 - (SELECT count(*) FROM vie_perdue v WHERE v.id_heros = h.id_heros AND v.id_saison = 4) AS vies_restantes,
+       (SELECT coalesce(sum(t.montant), 0) FROM transaction_pelotes t WHERE t.id_heros = h.id_heros) AS bourse,
+       (SELECT count(*) FROM tresor r WHERE r.id_heros_proprietaire = h.id_heros) AS nb_tresors
+FROM heros h
+JOIN joueur j ON j.id_joueur = h.id_joueur
+JOIN lignee l ON l.id_lignee = h.id_lignee
+LEFT JOIN clan c ON c.id_clan = h.id_clan
+LEFT JOIN heros m ON m.id_heros = h.id_mentor
+WHERE h.id_heros = 8'''
+rapide = "SELECT * FROM profil_heros WHERE id_heros = 8"
+facteur_min = 10.0
+repetitions = 5
+
+[[mesure]]
+id = "s2-profil-vue-materialisee"             # A5 : la vue matérialisée aussi
+base = "postgres"
+extrait_de = ["ateliers/s2/1-profil-jointures.sql", "ateliers/s2/3-profil-vue.sql"]
+lente = '''
+SELECT h.id_heros, h.nom AS heros, j.pseudo AS joueur, l.nom AS lignee, h.niveau, h.renommee,
+       c.nom AS clan, m.nom AS mentor,
+       9 - (SELECT count(*) FROM vie_perdue v WHERE v.id_heros = h.id_heros AND v.id_saison = 4) AS vies_restantes,
+       (SELECT coalesce(sum(t.montant), 0) FROM transaction_pelotes t WHERE t.id_heros = h.id_heros) AS bourse,
+       (SELECT count(*) FROM tresor r WHERE r.id_heros_proprietaire = h.id_heros) AS nb_tresors
+FROM heros h
+JOIN joueur j ON j.id_joueur = h.id_joueur
+JOIN lignee l ON l.id_lignee = h.id_lignee
+LEFT JOIN clan c ON c.id_clan = h.id_clan
+LEFT JOIN heros m ON m.id_heros = h.id_mentor
+WHERE h.id_heros = 8'''
+rapide = "SELECT * FROM profil_heros_vue WHERE id_heros = 8"
+facteur_min = 10.0
+repetitions = 5

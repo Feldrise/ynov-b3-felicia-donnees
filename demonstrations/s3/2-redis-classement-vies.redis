@@ -1,0 +1,33 @@
+# Séance 3, démonstration 2 : classement temps réel et compteur de Vies en clé-valeur (Redis), 9 minutes.
+# Ouvrir le terminal : make redis-cli. Copier les commandes une par une (redis-cli ne lit pas les lignes en #).
+# Chaque commande est rejouée par `make verify` (verification/requetes/04-s3-demonstrations.toml).
+
+# 1. Une clé, une valeur : la fiche de Moustique le Gourmand (Héros 3426) est un hash, lu en une seule opération.
+HGETALL heros:3426
+
+# 2. Le classement de la Saison est un ensemble trié par la Renommée : le top 10, déjà dans l'ordre.
+ZREVRANGE classement:saison:4 0 9 WITHSCORES
+
+# 3. Le rang de Moustique (compté à partir de 0) : 608, donc 609e.
+ZREVRANK classement:saison:4 3426
+
+# 4. Moustique remporte le duel du Phare Éteint : +250 de Renommée, et le classement est à jour aussitôt (rang 369, donc 370e).
+ZINCRBY classement:saison:4 250 3426
+ZREVRANK classement:saison:4 3426
+
+# 5. Puis il tombe de la Falaise des Soupirs : il perd une Vie. L'opération est atomique, même avec mille Héros en même temps.
+HINCRBY heros:3426 vies_restantes -1
+
+# 6. Une clé qui expire seule : 60 secondes de convalescence avant de retourner au combat.
+SET heros:3426:convalescence 1 EX 60
+TTL heros:3426:convalescence
+EXISTS heros:3426:convalescence
+
+# 7. La limite : pas de requête sur le contenu. « Quels membres du Cercle de l'Aube ont encore leurs 9 Vies ? »
+#    Redis ne sait que lire des clés : il faut lister les membres, puis lire la fiche de chacun.
+SMEMBERS clan:1:membres
+
+# Remise en état (à la fin de la démonstration, pour la rejouer à l'identique).
+ZINCRBY classement:saison:4 -250 3426
+HINCRBY heros:3426 vies_restantes 1
+DEL heros:3426:convalescence

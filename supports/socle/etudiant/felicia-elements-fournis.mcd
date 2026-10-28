@@ -1,0 +1,9 @@
+% Éléments fournis du cahier des charges de Félicia : les Îles, leurs zones et les Saisons.
+% Ils ne sont pas à modéliser pendant l'atelier de la Séance 1 : on les recopie dans son MCD pour y relier ses entités.
+% Pour l'atelier, chacun est réduit à son identifiant et à son nom : le niveau minimum d'une Île et les dates d'une Saison sont réservés au corrigé.
+% tables attendues : ile, zone, saison
+ÎLE: id_ile [INTEGER], nom_ile [VARCHAR(40)]
+COMPRENDRE, 1N ÎLE, _11 ZONE
+ZONE: nom_zone [VARCHAR(40)]
+
+SAISON: id_saison [INTEGER], nom_saison [VARCHAR(40)]

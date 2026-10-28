@@ -1,0 +1,18 @@
+% Apport de la Séance 2 : l'héritage des Lignées (fragment 1 de la Séance 1), stratégie « table-par-entite ».
+% La flèche choisit la traduction en tables ; le MCD, lui, ne change pas.
+% tables attendues : heros, sorcier, rodeur_d_ombre, gardien, alchimiste
+SORCIER: élément [VARCHAR(20)]
+RÔDEUR_D_OMBRE: furtivité [SMALLINT]
+:
+GARDIEN: rempart [SMALLINT]
+ALCHIMISTE: recettes_connues [SMALLINT]
+
+:
+/XT\ HÉROS -> SORCIER, RÔDEUR_D_OMBRE, GARDIEN, ALCHIMISTE
+:
+:
+
+:
+HÉROS: id_heros [INTEGER], nom_heros [VARCHAR(60)], niveau [SMALLINT]
+:
+:

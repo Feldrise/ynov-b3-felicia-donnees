@@ -1,0 +1,11 @@
+% Fragment de l'apport théorique de la Séance 1 : un Héros obtient un Trésor sur une Île (association ternaire).
+% Saisi dans Looping pendant l'apport ; l'Île est celle des éléments fournis du cahier des charges.
+% Repris tel quel dans l'atelier.
+% tables attendues : heros, tresor, ile
+HÉROS: id_heros [INTEGER], nom_heros [VARCHAR(60)], niveau [SMALLINT]
+OBTENIR, 0N HÉROS, 11 TRÉSOR, 0N ÎLE: date_obtention [TIMESTAMP]
+ÎLE: id_ile [INTEGER], nom_ile [VARCHAR(40)]
+
+:
+TRÉSOR: id_tresor [INTEGER], nom_tresor [VARCHAR(80)], nature [VARCHAR(20)], rareté [VARCHAR(12)]
+:
