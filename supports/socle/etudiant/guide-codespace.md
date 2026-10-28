@@ -36,7 +36,7 @@ L'ensemble est prévu en 7 minutes avec un compte GitHub existant, en 10 minutes
 4. Passez les questions de GitHub sur vos préférences.
 
 ::: encadre
-Un compte gratuit suffit. Il donne droit chaque mois à un quota d'utilisation des Codespaces : avec la machine 4 cœurs du module, cela représente environ 30 heures (conditions de GitHub à la date de rédaction). Les Séances 2 et 3 en consomment moins de 10.
+Un compte gratuit suffit. Il donne droit chaque mois à un quota d'utilisation des Codespaces : avec la machine 4 cœurs du module, cela représente environ 30 heures (conditions de GitHub à la date de rédaction). Les Séances 2 et 3 en consomment moins de 10. Le quota compte aussi la place occupée par un Codespace arrêté (environ 6 Go sur les 15 offerts) : supprimez-le sur **github.com/codespaces** après la Séance 4.
 :::
 
 ## 2. Créer le Codespace du module [2 min]{.duree}
