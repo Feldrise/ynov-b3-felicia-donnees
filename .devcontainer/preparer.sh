@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Exécuté une fois, à la création du Codespace : attend Docker puis tire les images des cinq bases,
+# Exécuté une fois, à la création du Codespace, et inclus dans la prébuild (onCreateCommand) : attend Docker puis tire les images des cinq bases,
 # pour que le premier `make up` démarre sans téléchargement.
 set -uo pipefail
 for _ in $(seq 1 60); do

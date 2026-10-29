@@ -9,7 +9,7 @@
     "cpus": 4,
     "memory": "16gb"
   },
-  "postCreateCommand": "bash .devcontainer/preparer.sh",
+  "onCreateCommand": "bash .devcontainer/preparer.sh",
   "postAttachCommand": "make aide",
   "customizations": {
     "vscode": {
