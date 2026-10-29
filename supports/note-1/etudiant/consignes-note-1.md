@@ -15,12 +15,12 @@ public: Support étudiant
 | Poids | **40 %** de la moyenne du module |
 | Sujet | une fonctionnalité d'**un autre jeu** que Félicia, distribuée à 10h30 |
 | Autorisés | tous les documents, et le **Familier** |
-| Rendu | un **dossier** à partir du modèle Word, et votre fichier Looping, sur **Moodle** avant 11h45 |
+| Rendu | un **dossier** à partir du modèle Word, et ton fichier Looping, sur **Moodle** avant 11h45 |
 :::
 
 ## Ce que l'on évalue
 
-Le sujet est un mini cahier des charges, volontairement court : quelques entités, une association particulière, et des règles de gestion dont certaines sont implicites. Une petite partie du MCD est **fournie**, déjà modélisée : vous la reprenez telle quelle et vous y reliez le reste. On évalue votre **jugement de conception** et sa justification, pas la vitesse à laquelle vous dessinez.
+Le sujet est un mini cahier des charges, avec des règles parfois implicites et une petite partie du MCD **fournie** : reprends-la telle quelle et relies-y le reste. Je note ton **jugement de conception**, pas ta vitesse de dessin.
 
 | Critère | Poids | Ce qui est attendu |
 |---------------------------------------|--------|--------------------------------------------------------------|
@@ -29,32 +29,32 @@ Le sujet est un mini cahier des charges, volontairement court : quelques entité
 | **Justification de la dénormalisation** | **25 %** | **un seul** choix, en 5 à 6 lignes, rattaché à une charge citée par le sujet ; le gain en lecture ; le coût en cohérence et en écriture ; qui maintient la copie, et quand |
 | **Journal du Familier** | **15 %** | chaque prompt copié tel quel (ou un lien de partage), sa réponse en bref, et pour chacun : gardé, rejeté ou modifié, **parce que...**, en citant le sujet |
 
-Le raisonnement de la justification est celui de l'atelier dénormalisation : ce que l'on gagne en lecture, ce que l'on paie en cohérence. Une dénormalisation sans charge précise à soulager, ou sans coût identifié, ne rapporte presque rien.
+Pour la justification, reprends le raisonnement de l'atelier. Sans charge précise à soulager ni coût identifié, elle ne rapporte presque rien.
 
 ## Le Familier et les documents
 
-- Le **Familier** est autorisé pendant toute la Note, comme tous vos documents (supports des Séances 1 et 2, vos fichiers, Internet).
-- Le **Journal du Familier** est **obligatoire** : il compte pour 15 %. Pour la Note 1, il tient dans la dernière partie du modèle de dossier, en version allégée : le nom de l'outil une fois, puis une ligne par prompt (le prompt, la réponse en bref, la décision et son « parce que... »). Remplissez-le **au fil de l'eau**, pas à la fin. Si vous n'utilisez pas le Familier, dites-le en deux ou trois lignes et expliquez pourquoi.
-- La Note est **individuelle** : vous ne communiquez avec aucun autre étudiant, ni à voix haute ni par messagerie.
+Le **Familier** et tous les documents sont autorisés (supports, tes fichiers, Internet). Le **Journal du Familier** est **obligatoire** : il tient dans la dernière partie du dossier, une ligne par prompt. Remplis-le **au fil de l'eau**, pas à la fin. Sans Familier, explique pourquoi en deux ou trois lignes.
+
+La Note est **individuelle** : aucune communication avec un autre étudiant, ni à voix haute ni par messagerie.
 
 ## Le déroulé conseillé
 
-| Heure | Ce que vous faites |
+| Heure | Ce que tu fais |
 |-------|------------------------------------------------------------------------|
-| 10h30 | Lecture du sujet, crayon en main : soulignez chaque règle et chaque chiffre. |
-| 10h35 | MCD dans Looping (ou Mocodo), en partant des éléments fournis par le sujet ; règles de gestion dans le dossier. |
-| 11h05 | MLD : génération, collage dans le dossier, relecture avec la grille en huit questions de la Séance 2, corrections. |
-| 11h15 | Justification de la dénormalisation, dans le dossier. |
-| 11h30 | Relecture du Journal du Familier, enregistrement du dossier en PDF, dépôt. |
+| 10h30 | Lecture du sujet, crayon en main : souligne chaque règle et chaque chiffre. |
+| 10h35 | MCD, à partir des éléments fournis ; règles de gestion dans le dossier. |
+| 11h05 | MLD : génération, collage, relecture avec la grille en huit questions de la Séance 2. |
+| 11h15 | Justification de la dénormalisation. |
+| 11h30 | Relecture du Journal, dossier en PDF, dépôt. |
 | 11h45 | Fin du dépôt sur Moodle. |
 
-Le formateur annonce l'heure à 11h15 et à 11h35. Rien n'est à préparer avant la Note.
+J'annonce l'heure à 11h15 et à 11h35. Rien à préparer avant.
 
 ## Le dossier et le dépôt sur Moodle
 
-Tout s'écrit dans un seul **modèle de dossier**, `dossier-note-1-modele.docx`, à télécharger sur Moodle avant 10h30 (Word, LibreOffice Writer ou Google Docs). Ses quatre parties suivent les productions du sujet. Vous y collez l'image du MCD (Looping : copier le diagramme ; Mocodo en ligne : télécharger l'image) et le MLD généré, et vous écrivez le reste dedans. Deux fichiers à déposer, nommés avec votre nom et votre prénom :
+Tout s'écrit dans le **modèle de dossier**, `dossier-note-1-modele.docx`, à télécharger sur Moodle avant 10h30 (Word, LibreOffice Writer ou Google Docs). Colles-y l'image du MCD (Looping : copier le diagramme ; Mocodo en ligne : télécharger l'image) et le MLD généré. Deux fichiers à déposer, à ton nom et prénom :
 
-1. `NOM-Prenom-note-1.loo` : le fichier Looping de votre MCD (sous Mocodo, votre texte Mocodo, `NOM-Prenom-note-1.mcd`) ;
+1. `NOM-Prenom-note-1.loo` : le fichier Looping de ton MCD (sous Mocodo, ton texte Mocodo, `NOM-Prenom-note-1.mcd`) ;
 2. `NOM-Prenom-note-1.pdf` : le dossier rempli, enregistré en PDF.
 
-Un dépôt incomplet à 11h45 est corrigé tel quel : déposez une première version à 11h35, puis remplacez-la si besoin.
+Un dépôt incomplet à 11h45 est corrigé tel quel : dépose une première version à 11h35, puis remplace-la si besoin.

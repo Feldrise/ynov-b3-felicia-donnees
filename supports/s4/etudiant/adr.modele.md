@@ -5,7 +5,7 @@ lang: fr-FR
 
 **Groupe** :
 
-Des puces suffisent dans chaque rubrique : une phrase par idée, avec ses chiffres.
+Des puces suffisent : une idée par puce, avec ses chiffres.
 
 **Sujet de Note 2 n°** :            **Carte Patch Day n°** :
 

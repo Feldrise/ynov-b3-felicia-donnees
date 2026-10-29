@@ -7,17 +7,17 @@ public: Support étudiant
 
 ## Mode d'emploi
 
-- **9h50, en groupe expert** [15 min]{.duree} : chacun remplit la fiche individuelle pour son paradigme, à partir des Tickets traités. Le groupe se met d'accord sur la requête type et les limites ; chaque membre en garde sa copie, puisqu'il présentera seul.
-- **10h13, en groupe mixte** [4 × 8 min]{.duree} : chaque expert présente sa fiche individuelle en 8 minutes environ, requête rejouée dans son Codespace. Les autres complètent la fiche commune pendant qu'il parle.
-- **10h45, en groupe mixte** [5 min]{.duree} : relecture de la fiche commune ensemble ; chaque case est remplie.
+- **9h50, en groupe expert** [15 min]{.duree} : remplis la fiche individuelle de ton paradigme à partir des Tickets traités. Mettez-vous d'accord sur la requête type et les limites, et garde ta propre copie : c'est avec elle que tu présenteras en groupe mixte.
+- **10h13, en groupe mixte** [4 × 8 min]{.duree} : chaque expert présente sa fiche en 8 minutes environ, requête rejouée dans son Codespace. Pendant ce temps, les autres complètent la fiche commune.
+- **10h45, en groupe mixte** [5 min]{.duree} : relisez la fiche commune ensemble, jusqu'à ce que chaque case soit remplie.
 
 ::: encadre
 ### Une présentation de 8 minutes
 
 1. **1 min** : le modèle, en une phrase et un dessin (document, clé, partition, nœud).
-2. **3 min** : un Ticket du Game Designer de votre fiche, requête rejouée sous les yeux des autres.
+2. **3 min** : un Ticket du Game Designer de ta fiche, requête rejouée sous les yeux des autres.
 3. **2 min** : deux forces, deux limites, chacune illustrée par Félicia.
-4. **2 min** : un besoin pour lequel vous **ne** le choisiriez **pas**, et les questions des autres.
+4. **2 min** : un besoin pour lequel tu **ne** le choisirais **pas**, puis les questions des autres.
 :::
 
 ## Fiche individuelle · Mon paradigme {.nouvelle-page}

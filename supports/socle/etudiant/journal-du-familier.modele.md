@@ -7,7 +7,7 @@ lang: fr-FR
 
 **Note concernée** (Note 1 ou Note 2) :
 
-Une ligne par prompt, dans l'ordre chronologique. Le prompt est copié tel quel, ou remplacé par le lien de partage de la conversation. Ajoutez des lignes au tableau autant que nécessaire.
+Une ligne par prompt, dans l'ordre d'envoi. Copie le prompt tel quel, ou mets à la place le lien de partage de la conversation. Ajoute autant de lignes que nécessaire.
 
 | N° | Outil | Prompt ou lien | Réponse en bref | Décision | Parce que... |
 |----|----------|---------------------|-------------------------|---------|-----------------------------|
@@ -20,8 +20,8 @@ Une ligne par prompt, dans l'ordre chronologique. Le prompt est copié tel quel,
 
 **Bilan en trois lignes**
 
-Où le Familier vous a aidé :
+Où le Familier a aidé :
 
-Où il vous a trompé :
+Où il a trompé :
 
-Ce que vous changeriez dans votre façon de le solliciter :
+Ce que tu changerais dans ta façon de le solliciter :

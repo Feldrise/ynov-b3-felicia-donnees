@@ -12,12 +12,11 @@ Le studio **Griffe & Grimoire** prépare la prochaine version de *Neuf Vies : Le
 Le studio vous recrute pour concevoir la base de données. Ce document est le cahier des charges rédigé par les game designers du studio : il décrit Félicia avec leurs mots, pas avec ceux d'un informaticien.
 
 ::: bloc
-### Ce cahier des charges est volontairement réaliste
+### Un cahier des charges volontairement réaliste
 
-- Certaines règles sont **implicites** : elles ne sont pas écrites comme des règles, mais elles se déduisent du texte.
-- Certaines phrases sont **ambiguës** : deux lectures sont possibles, et le studio n'a pas tranché.
+Comme dans un vrai projet, certaines règles sont **implicites** : elles ne sont pas écrites comme des règles, mais elles se déduisent du texte. Et certaines phrases sont **ambiguës** : deux lectures sont possibles, et le studio n'a pas tranché.
 
-Votre travail consiste à extraire les règles de gestion, à repérer les ambiguïtés et à **écrire l'hypothèse que vous retenez** pour chacune. Un modèle juste avec des hypothèses explicites vaut mieux qu'un modèle qui devine en silence.
+À vous d'extraire les règles de gestion, de repérer les ambiguïtés et d'**écrire l'hypothèse que vous retenez** pour chacune. Un modèle juste avec des hypothèses explicites vaut mieux qu'un modèle qui devine en silence.
 :::
 
 ## L'archipel de Félicia
@@ -29,7 +28,7 @@ Chaque Île est découpée en **zones** qui portent un nom : sur l'Île de Brume
 Le temps de Félicia est rythmé par les **Saisons**. Une Saison dure environ trois mois, porte un nom (la Saison en cours s'appelle la Saison de la Lune Rousse) et a une date de début et une date de fin.
 
 ::: encadre
-Les Îles, leurs zones et les Saisons sont déjà modélisées : vous les trouverez en fin de document, parmi les éléments fournis pour l'atelier. Pour l'atelier, elles sont réduites à leur identifiant et à leur nom : le niveau minimum d'une Île et les dates d'une Saison n'y figurent pas, et vous n'avez pas à les ajouter.
+Les Îles, leurs zones et les Saisons sont déjà modélisées : elles vous attendent en fin de document, parmi les éléments fournis pour l'atelier. Elles y sont réduites à leur identifiant et à leur nom : le niveau minimum d'une Île et les dates d'une Saison n'y figurent pas, et vous n'avez pas à les ajouter.
 :::
 
 ## Les Joueurs et leurs Héros
@@ -74,7 +73,7 @@ En explorant, un Héros obtient des **Trésors** : armes, armures, grimoires, po
 Chaque Trésor a un nom, une nature et une rareté : commun, rare, épique ou légendaire. Ses autres attributs dépendent de sa nature : une arme a des dégâts et une allonge, un grimoire contient une liste de sorts, une potion a un effet, une durée et un nombre de doses, une relique peut être maudite...
 
 ::: encadre
-Les attributs propres à chaque nature de Trésor ne font pas partie de l'atelier de la Séance 1 : dans votre MCD, un Trésor a seulement son identifiant, son nom, sa nature et sa rareté. Vous les retrouverez en Séance 3.
+Les attributs propres à chaque nature de Trésor attendront la Séance 3 : dans le MCD de l'atelier de la Séance 1, un Trésor a seulement son identifiant, son nom, sa nature et sa rareté.
 :::
 
 Les Trésors **légendaires** sont uniques : il n'en existe qu'un exemplaire dans tout Félicia, et les Héros se les échangent.
@@ -100,7 +99,7 @@ La monnaie de Félicia est la **Pelote d'or**. Elle se gagne en accomplissant de
 > Extrait de la messagerie du studio : « Un Joueur qui achète des Pelotes d'or avec sa carte bancaire veut les retrouver sur son Héros préféré. »
 
 ::: encadre
-Les Pelotes d'or ne font pas partie de l'atelier de la Séance 1 : vous les retrouverez en Séance 2, dans la base de données du module.
+Les Pelotes d'or ne sont pas dans l'atelier de la Séance 1 : on les retrouve en Séance 2, dans la base de données du module.
 :::
 
 ## Ce que le studio veut pouvoir faire
@@ -113,7 +112,7 @@ Le modèle complet doit permettre de répondre, entre autres, aux demandes ci-de
 4. Retrouver les **Clans alliés** d'un Clan, et les alliés de ses alliés. *Dans l'atelier, seulement si le temps le permet : l'alliance est facultative ; la recherche des alliés de ses alliés revient en Séance 3.*
 5. Savoir **qui possède aujourd'hui** chaque Trésor légendaire. *Dans l'atelier.*
 
-## Ce que vous produisez pendant l'atelier
+## Le rendu de l'atelier
 
 ::: bloc
 En binôme, à partir de ce cahier des charges :
@@ -129,17 +128,17 @@ Ne sont **pas demandés** pendant l'atelier : les attributs propres à chaque na
 
 ### Par où commencer
 
-- Partagez-vous le travail : l'un saisit le MCD, l'autre écrit au fur et à mesure les règles de gestion et les hypothèses. Échangez à chaque Ticket.
+- Mon conseil : partagez-vous le travail. L'un saisit le MCD, l'autre écrit au fur et à mesure les règles de gestion et les hypothèses, et vous échangez à chaque Ticket.
 - Les Îles, leurs zones et les Saisons ne sont pas à modéliser : recopiez les éléments fournis ci-dessous et reliez-y vos entités quand le cahier des charges le demande (le repaire d'un Clan, l'obtention d'un Trésor, une Vie perdue). L'Île est déjà dans votre fichier depuis l'apport théorique (l'obtention d'un Trésor) : sous Windows, il reste à dessiner dans Looping la zone, la Saison et l'association COMPRENDRE.
 - Les fragments dessinés pendant l'apport théorique (les Lignées, le mentorat, l'obtention d'un Trésor sur une Île) se reprennent tels quels.
-- Ordre conseillé : Joueur, Héros et Lignées ; le mentorat ; les Trésors ; les Clans ; les Vies.
+- L'ordre que je vous conseille : Joueur, Héros et Lignées ; le mentorat ; les Trésors ; les Clans ; les Vies.
 - Le chef d'un Clan et les alliances entre Clans viennent en dernier, si le temps le permet.
 
 ### Les éléments fournis
 
 ![Les Îles, leurs zones et les Saisons, réduites à leur identifiant et à leur nom pour l'atelier](felicia-elements-fournis.svg)
 
-Une zone est identifiée par son nom **et** par son Île : c'est ce que signale le soulignement de la patte entre ZONE et COMPRENDRE (identification relative). Le texte Mocodo, pour Mac et Linux, à coller **sans sa première ligne** si votre fichier contient déjà l'Île (Mocodo refuse une entité déclarée deux fois : « Duplicate entity ») :
+Une zone est identifiée par son nom **et** par son Île : c'est ce que dit le soulignement de la patte entre ZONE et COMPRENDRE (identification relative). Sous Mac et Linux, voici le texte Mocodo. Collez-le **sans sa première ligne** si votre fichier contient déjà l'Île : Mocodo refuse une entité déclarée deux fois (« Duplicate entity »).
 
 ```text
 ÎLE: id_ile [INTEGER], nom_ile [VARCHAR(40)]

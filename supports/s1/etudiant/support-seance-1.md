@@ -5,85 +5,55 @@ surtitre: Séance 1 · Lundi 9 novembre, 13h00 à 16h00
 public: Support étudiant
 ---
 
-## Le programme de la Séance
+## Au programme
 
-| Heure | Bloc | Durée |
-|---------------|------------------------------------------------------|---------|
-| 13h00 | Lancement : le module, le Fil rouge, les Notes, le Familier, l'outil | 20 min |
-| 13h20 | Bug Hunt n°1 | 15 min |
-| 13h35 | Apport théorique interactif : Merise avancé sur Félicia | 30 min |
-| 14h05 | Pause | 10 min |
-| 14h15 | Atelier en binôme : le MCD de Félicia, et deux Tickets du Game Designer | 50 min |
-| 15h05 | Le Familier a dessiné un MCD | 25 min |
-| 15h30 | Boss de fin de Séance | 20 min |
-| 15h50 | Bilan et annonce de la Séance 2 | 10 min |
+Lancement (20 min), Bug Hunt n°1 (15 min), apport sur Merise avancé (30 min), pause (10 min), atelier en binôme (50 min), « Le Familier a dessiné un MCD » (25 min), Boss (20 min), bilan (10 min).
 
-Vous avez reçu en début de Séance le **cahier des charges de Félicia**. Gardez-le sous la main : il sert à l'atelier, au Familier et au Boss.
+Garde le **cahier des charges de Félicia** sous la main tout l'après-midi : il sert à l'atelier, au Familier et au Boss.
 
 ## 1. Lancement [20 min]{.duree}
 
-### Le module en une phrase
+### Ce qu'on va faire ensemble
 
-Choisir, concevoir et **justifier** la couche de données d'une application avant d'écrire une ligne de code : Merise avancé (Séances 1 et 2), les paradigmes NoSQL (Séance 3), puis une architecture polyglotte qui combine SQL et NoSQL (Séance 4).
+Le but du module : choisir et concevoir la couche de données d'une application, et surtout **justifier** tes choix, avant d'écrire du code. Merise avancé en Séances 1 et 2, NoSQL en Séance 3, les deux ensemble en Séance 4.
 
 ### Le Fil rouge : *Neuf Vies : Les Îles de Félicia*
 
-Toutes les démonstrations et tous les ateliers portent sur un même jeu, édité par le studio **Griffe & Grimoire** : un action-RPG en ligne dans un archipel d'îles flottantes peuplé de chats-mages.
+Tout le module tourne autour d'un même jeu, édité par le studio **Griffe & Grimoire** : un action-RPG en ligne, dans un archipel d'îles flottantes peuplé de chats-mages.
 
-- Un **Joueur** (la personne humaine) incarne un ou plusieurs **Héros** (des chats-mages).
-- Chaque Héros appartient à une **Lignée** (Sorcier, Rôdeur d'ombre, Gardien, Alchimiste), peut rejoindre un **Clan**, collectionne des **Trésors** et dépense des **Pelotes d'or**.
-- Mécanique signature : **9 Vies par Saison et par Héros**. Perdre une Vie est un événement tracé.
-
-Le même univers servira à tout : Joueurs et boutique en relationnel, Trésors en document, classements en clé-valeur, télémétrie des Vies en colonne, réseau des Clans en graphe.
+Un **Joueur**, la personne derrière l'écran, incarne un ou plusieurs **Héros**. Chaque Héros a sa **Lignée** (Sorcier, Rôdeur d'ombre, Gardien ou Alchimiste), peut rejoindre un **Clan**, collectionne des **Trésors** et dépense des **Pelotes d'or**. Et comme ce sont des chats, chaque Héros a **9 Vies par Saison**. Chaque Vie perdue est tracée.
 
 ### Les deux Notes
 
-::: bloc
-| | Note 1 | Note 2 |
-|----------------|-------------------------------------------|-------------------------------------------|
-| Quand | fin de Séance 2, 1 h 15 | Séance 4 |
-| Format | individuelle | en trinôme |
-| Sujet | une fonctionnalité d'**un autre jeu** que Félicia | un autre jeu, tiré au sort en fin de Séance 2 |
-| Production | MCD et MLD dans Looping, justification d'un choix de dénormalisation, Journal du Familier | architecture polyglotte, puis adaptation au **Patch Day** et ADR, Journal du Familier |
-| Poids | **40 %** | **60 %** |
+**Note 1** (40 %, seul, fin de Séance 2) : le MCD et le MLD d'un autre jeu que Félicia, plus un choix de dénormalisation à justifier, en 1 h 15. **Note 2** (60 %, en trinôme, Séance 4) : une architecture polyglotte pour un autre jeu tiré au sort, que tu adapteras au **Patch Day**.
 
-Tout se fait **pendant les Séances** : aucun travail n'est demandé entre deux Séances, ni avant une Note.
-:::
-
-Les ateliers, le Bug Hunt et le Boss sont de l'**Évaluation formative** : ils ne comptent pas dans la moyenne, ils servent à vous situer avant les Notes.
+Tout se fait en Séance, rien à préparer entre deux. Les ateliers, Bug Hunts et Boss sont de l'**Évaluation formative** : ils ne comptent pas, ils te disent où tu en es.
 
 ### Le Familier
 
-Dans ce module, l'IA générative s'appelle le **Familier** : un compagnon utile, qui affirme parfois des choses fausses avec un aplomb parfait.
+Ici, l'IA générative s'appelle le **Familier**. C'est un compagnon utile, qui affirme parfois des choses fausses avec un aplomb parfait.
 
-- Il est **autorisé partout**, y compris pendant la Note 1 et la Note 2.
-- Ce qui est évalué, c'est votre **jugement de conception** et sa justification, pas la production d'un schéma.
-- Chaque Note comprend un **Journal du Familier** : vos prompts copiés tels quels et, pour chacun, « gardé, rejeté ou modifié, parce que... ». Il compte pour 15 % de la Note 1 et 20 % de la Note 2. Le mode d'emploi est sur Moodle.
-- Trois temps du module vous apprennent à vous en servir : aujourd'hui, **« Le Familier a dessiné un MCD »** ; en Séance 3, **« Demande au Familier »** ; en Séance 4, le **Patch Day**.
+Tu peux t'en servir partout, Notes comprises : je note ton jugement, pas le schéma. Chaque Note comprend donc un **Journal du Familier** (tes prompts, et ce que tu en as gardé, rejeté ou modifié, et pourquoi), qui compte pour 15 % de la Note 1 et 20 % de la Note 2. On s'entraîne à trois moments : aujourd'hui, en Séance 3 avec « Demande au Familier », et en Séance 4 au Patch Day.
 
-### L'outil : Looping, ou Mocodo en ligne [5 min]{.duree}
+### L'outil [5 min]{.duree}
 
-Suivez le guide **« Installer Looping ou ouvrir Mocodo »** : Looping sous Windows, Mocodo en ligne sur Mac ou Linux. Pas prêt au bout de 5 minutes ? Passez à Mocodo en ligne et prévenez le formateur.
+Suis le guide « Installer Looping ou ouvrir Mocodo » : Looping sous Windows, Mocodo en ligne sur Mac ou Linux. Si ça bloque au bout de 5 minutes, passe sur Mocodo en ligne et fais-moi signe.
 
-Créez tout de suite dans Looping un fichier `felicia.loo` (sous Mocodo : un fichier texte `felicia.mcd`). C'est **lui** qui recevra les fragments de l'apport théorique, puis votre MCD de l'atelier.
+Crée tout de suite un fichier `felicia.loo` (ou `felicia.mcd` sous Mocodo) : il recevra les fragments de l'apport, puis ton MCD.
 
 ## 2. Bug Hunt n°1 [15 min]{.duree}
 
-Un stagiaire du studio a dessiné le MCD de Félicia en dix minutes, sans lire le cahier des charges jusqu'au bout. Le voici.
+Un stagiaire du studio a dessiné le MCD de Félicia en dix minutes, sans lire le cahier des charges jusqu'au bout. Il y a laissé **six erreurs**.
 
 ![Le MCD du stagiaire : six erreurs s'y cachent](bug-hunt-1.svg)
 
 ::: bloc
 ### En binôme, 8 minutes
 
-1. Lisez le schéma **à voix haute**, association par association, dans les deux sens : « un Joueur adhère à... ; un Clan... ».
-2. Comparez chaque phrase au cahier des charges.
-3. Notez chaque erreur en une ligne : **où** elle est, **pourquoi** c'est faux.
-
-Il y a **six erreurs**. Pas besoin de ressaisir le schéma : annotez-le sur le support ou sur une feuille.
+Lisez le schéma à voix haute, association par association et dans les deux sens (« un Joueur adhère à… ; un Clan… »), puis comparez chaque phrase au cahier des charges. Notez chaque erreur en une ligne : où elle est, et pourquoi c'est faux. Pas besoin de ressaisir le schéma, annotez-le directement.
 :::
 
-Le texte Mocodo du schéma (sans les types de données), pour le manipuler dans Mocodo en ligne si vous le souhaitez :
+Si tu veux le manipuler dans Mocodo en ligne, voici son texte :
 
 ```text
 JOUEUR: id_joueur, pseudo, courriel, nom_heros, lignée, vies_restantes
@@ -99,34 +69,25 @@ TRÉSOR: id_tresor, nom_tresor, nature, rareté
 ÎLE: id_ile, nom_ile
 ```
 
-Correction collective ensuite : vos erreurs relevées serviront de point de départ à l'apport théorique.
+On corrige ensemble juste après, et tes erreurs relevées lancent l'apport.
 
 ## 3. Apport théorique interactif [30 min]{.duree}
 
-Trois fragments vont être saisis **pendant l'apport**, dans votre fichier `felicia` : vous les reprendrez **tels quels** dans l'atelier. Le formateur vous laisse le temps de chaque saisie. Sous Mocodo, copiez le texte donné sous chaque fragment.
+On saisit trois fragments pendant l'apport, dans ton fichier `felicia` : tu les reprendras tels quels à l'atelier. Sous Mocodo, copie le texte sous chaque fragment.
 
-### Rappel actif : ce que le Bug Hunt nous a appris
+### Ce que le Bug Hunt nous a appris
 
-À partir de vos erreurs, on reconstruit ensemble :
+Une **entité** a son propre identifiant ; une **association** relie des entités et peut porter des attributs ; les **cardinalités** se lisent depuis l'entité (« un Clan abrite… » se lit sur la patte du Clan).
 
-- **Entité** : un concept du métier qui a une existence propre et un **identifiant** (souligné).
-- **Association** : un lien entre entités, nommé par un verbe ; elle peut porter des attributs (la date d'adhésion).
-- **Cardinalités** : sur chaque patte, le nombre minimum et maximum de participations **d'une occurrence de l'entité** à l'association : 0,1 ; 1,1 ; 0,N ; 1,N. On les lit depuis l'entité : « un Clan abrite... » se lit sur la patte du Clan.
-- **Deux concepts proches ne sont pas un seul concept** : un Joueur et un Héros n'ont ni le même identifiant, ni la même durée de vie, ni les mêmes attributs. Les fusionner interdit d'avoir plusieurs Héros.
+Et Joueur et Héros sont deux concepts : identifiants, durées de vie et attributs différents. Fusionne-les, et plus personne n'a deux Héros.
 
 ### L'héritage : les Lignées
 
-Tous les Héros partagent un nom, un niveau, une date de création. Mais chaque Lignée apporte **une caractéristique que les autres n'ont pas** : l'élément d'un Sorcier, la furtivité d'un Rôdeur d'ombre, le rempart d'un Gardien, les recettes d'un Alchimiste.
-
-Mettre ces quatre attributs dans HÉROS laisserait un Sorcier avoir une furtivité. L'**héritage** (ou spécialisation) range chaque attribut propre dans une **entité fille**, qui hérite de l'identifiant et des attributs de l'entité mère.
+Chaque Lignée a sa caractéristique : l'élément du Sorcier, la furtivité du Rôdeur d'ombre, le rempart du Gardien, les recettes de l'Alchimiste. Tout mettre dans HÉROS, c'est permettre un Sorcier furtif. L'**héritage** range chaque attribut dans une entité fille.
 
 ![Fragment 1 : le Joueur, ses Héros et les quatre Lignées](apport-lignees.svg)
 
-Le triangle porte les contraintes de l'héritage :
-
-- **X** (exclusion) : un Héros appartient à **au plus une** Lignée ;
-- **T** (totalité) : un Héros appartient à **au moins une** Lignée ;
-- **XT** (partition) : les deux à la fois, une et une seule Lignée. C'est le cas de Félicia : « ce choix est définitif ».
+Le triangle dit combien de filles un Héros peut avoir : **X** pour au plus une, **T** pour au moins une, **XT** pour exactement une. Félicia est en XT : « ce choix est définitif ».
 
 ```text
 SORCIER: élément
@@ -143,37 +104,34 @@ HÉROS: id_heros, nom_heros, niveau
 ```
 
 ::: encadre
-**Saisie, 3 minutes.** Le Joueur, le Héros, l'association INCARNER, puis l'héritage et ses quatre entités filles (geste décrit dans le mémo du guide Looping). Les autres attributs du Joueur et du Héros s'ajoutent pendant l'atelier.
+**Saisie, 3 minutes** : le Joueur, le Héros, INCARNER, puis l'héritage et ses quatre filles (le geste est dans le mémo du guide Looping). Les autres attributs viendront pendant l'atelier.
 :::
 
-### L'association réflexive : le mentorat
+### La réflexive : le mentorat
 
-Un Héros de niveau 30 au moins peut devenir le **mentor** de Héros débutants. Les deux pattes de l'association vont vers la **même entité** : c'est une association réflexive. Pour savoir qui est qui, chaque patte porte un **rôle**.
+Un Héros de niveau 30 ou plus peut devenir mentor. Les deux pattes vont vers HÉROS : c'est une **réflexive**, avec un rôle sur chaque patte. Apprenti en 0,1 (un mentor au plus), mentor en 0,N.
 
 ![Fragment 2 : le mentorat, une association réflexive](apport-mentorat.svg)
 
-- Côté **apprenti** : 0,1. Un apprenti n'a qu'un seul mentor à la fois, et un Héros n'est pas forcément apprenti.
-- Côté **mentor** : 0,N. Un mentor suit quelques apprentis, ou aucun.
-
-Sous Mocodo, ajoutez à la fin de votre texte la seule ligne nouvelle (HÉROS y est déjà) :
+Sous Mocodo, ajoute juste cette ligne (HÉROS est déjà là) :
 
 ```text
 MENTORER, 0N [mentor] HÉROS, 01 [apprenti] HÉROS
 ```
 
 ::: encadre
-**Saisie, 1 minute.** Une association, deux liens vers HÉROS, un rôle sur chaque lien.
+**Saisie, 1 minute** : une association, deux liens vers HÉROS, un rôle sur chaque lien.
 :::
 
-### L'association ternaire : un Héros obtient un Trésor sur une Île
+### La ternaire : un Héros obtient un Trésor sur une Île
 
-Le studio veut savoir « quel Héros a obtenu quel Trésor, sur quelle Île et à quel moment ». Les trois entités participent **ensemble** au même fait : c'est une association **ternaire**, qui porte la date.
+Le studio veut savoir quel Héros a obtenu quel Trésor, sur quelle Île, et quand. Les trois entités participent au même fait : c'est une association **ternaire**, qui porte la date.
 
 ![Fragment 3 : l'obtention d'un Trésor, une association ternaire](apport-obtention.svg)
 
-Un Trésor est un **exemplaire** : il n'est obtenu qu'**une seule fois**. Sa patte est donc 1,1. Cela veut dire qu'un Trésor suffit à retrouver le Héros et l'Île de son obtention : on y revient dans les contraintes. Deux associations binaires (Trésor–Héros et Trésor–Île, en 1,1 côté Trésor) seraient donc justes aussi ; la ternaire dit mieux qu'il s'agit d'un seul fait. Si un même Trésor pouvait être obtenu plusieurs fois, par des Héros et sur des Îles différents, les deux binaires ne diraient plus qui l'a obtenu où : la ternaire redeviendrait nécessaire.
+Un Trésor n'est obtenu qu'une fois, d'où le 1,1. Il suffit donc à retrouver son Héros et son Île : deux binaires en 1,1 côté Trésor seraient justes aussi, la ternaire dit juste mieux qu'il s'agit d'un seul fait. Si un Trésor pouvait être obtenu plusieurs fois, par des Héros et sur des Îles différents, elle redeviendrait nécessaire.
 
-Sous Mocodo, ajoutez les trois lignes nouvelles, sur une nouvelle rangée (la ligne vide). L'Île est celle des éléments fournis du cahier des charges : quand vous collerez ces éléments pendant l'atelier, **sautez leur première ligne** (`ÎLE: ...`), sinon Mocodo refuse le texte (« Duplicate entity »).
+Sous Mocodo, ajoute ces lignes sur une nouvelle rangée. À l'atelier, quand tu colleras les éléments fournis du cahier des charges, saute leur ligne `ÎLE: ...` : elle est déjà là, et Mocodo refuse les doublons (« Duplicate entity »).
 
 ```text
 
@@ -183,64 +141,52 @@ TRÉSOR: id_tresor, nom_tresor, nature, rareté
 ```
 
 ::: encadre
-**Saisie, 2 minutes.** Le Trésor, l'Île (celle des éléments fournis du cahier des charges, avec son identifiant et son nom), et l'association à trois liens.
+**Saisie, 2 minutes** : le Trésor, l'Île (avec son identifiant et son nom) et l'association à trois liens.
 :::
 
 ### Les contraintes
 
-Un MCD peut dire plus que des cardinalités. Quand vous ne savez pas dessiner une contrainte, écrivez-la en règle de gestion : c'est juste aussi.
+Un MCD peut dire plus que des cardinalités :
 
-| Contrainte | Ce qu'elle dit | Sur Félicia |
-|-----------------------------|----------------------------------------------|-------------------------------------------|
-| **Partition (XT)** | chaque occurrence de la mère est dans une et une seule fille | un Héros a une et une seule Lignée |
-| **Intégrité fonctionnelle (CIF)** | dans une association, certaines entités en déterminent une autre | un Trésor détermine le Héros et l'Île de son obtention (patte 1,1 de la ternaire) |
-| **Inclusion (I)** | les occurrences d'une association sont incluses dans celles d'une autre | le chef d'un Clan fait partie des membres de ce Clan |
-| **Exclusion (X)** | une même occurrence ne peut pas participer aux deux associations | une Vie perdue n'est pas prise par le Héros qui l'a perdue (PERDRE et PRENDRE, en duel) |
+- la **partition (XT)** : un Héros a une et une seule Lignée ;
+- la **contrainte d'intégrité fonctionnelle (CIF)** : un Trésor détermine le Héros et l'Île de son obtention, c'est la patte 1,1 de la ternaire ;
+- l'**inclusion (I)** : le chef d'un Clan fait partie de ses membres ;
+- l'**exclusion (X)** : une Vie perdue en duel n'est pas prise par le Héros qui l'a perdue (PERDRE et PRENDRE).
+
+Tu ne sais pas dessiner une contrainte ? Écris-la en règle de gestion, c'est juste aussi.
 
 ### Les règles de gestion, dont les 9 Vies
 
-Une **règle de gestion** est une phrase du métier, écrite sans ambiguïté, que le modèle doit respecter. Certaines se voient dans le MCD (« un Héros appartient à un seul Joueur » : la cardinalité 1,1). D'autres **ne s'y voient pas** et s'écrivent à côté du schéma :
+Une **règle de gestion** est une phrase du métier que le modèle doit respecter. Certaines se voient (« un Héros appartient à un seul Joueur », c'est le 1,1), d'autres s'écrivent à côté du schéma (« un Clan ne dépasse jamais cinquante Héros »).
 
-- « un Clan ne dépasse jamais cinquante Héros » : un MCD ne dessine pas de maximum chiffré ;
-- « un mentor a un niveau d'au moins 30 et n'appartient pas au même Joueur que son apprenti » ;
-- « chaque Héros dispose de 9 Vies par Saison ».
-
-À vous : formulez ensemble la règle des 9 Vies. Que faut-il garder en mémoire pour l'appliquer ? Un compteur, ou chaque Vie perdue ? Rattachée à quoi ?
+À vous : formulez la règle des 9 Vies. Pour l'appliquer, que faut-il garder en mémoire ? Un compteur, ou chaque Vie perdue ? Et rattaché à quoi ?
 
 ## 4. Pause [10 min]{.duree}
 
 ## 5. Atelier en binôme : le MCD de Félicia [50 min]{.duree}
 
 ::: bloc
-### Ce que vous produisez
+### Ce que vous rendez
 
-À partir du **cahier des charges**, dans votre fichier `felicia` qui contient déjà les trois fragments de l'apport :
+Dans votre fichier `felicia`, qui contient déjà les trois fragments :
 
-1. le **MCD** de Félicia, limité à six concepts : **Joueur, Héros, Lignée, Clan, Trésor et Vies** ;
-2. à côté du MCD, les **règles de gestion** qu'il ne montre pas, dont celle des 9 Vies ;
-3. au moins **trois ambiguïtés** repérées, avec l'hypothèse retenue pour chacune, en une ligne.
+1. le **MCD** de Félicia, limité à six concepts : Joueur, Héros, Lignée, Clan, Trésor et Vies ;
+2. à côté, les **règles de gestion** que le schéma ne montre pas, dont celle des 9 Vies ;
+3. au moins **trois ambiguïtés** du cahier des charges, avec votre hypothèse pour chacune, en une ligne.
 
-Deux **Tickets du Game Designer** tomberont pendant l'atelier : le formateur les annonce, vous les traitez dès leur arrivée.
+Deux **Tickets du Game Designer** vont tomber pendant l'atelier, vers 14h30 et 14h40. Traitez-les dès leur arrivée.
 :::
 
-| Repère | Ce que vous faites |
-|---------------|------------------------------------------------------------------------|
-| 14h15 | Lecture du cahier des charges à deux, crayon en main : règles et ambiguïtés au passage |
-| vers 14h22 | Les éléments fournis complétés (zone, Saison : l'Île est déjà là), les attributs du Joueur et du Héros, le propriétaire actuel de chaque Trésor |
-| 14h30 | **Ticket du Game Designer n°1** |
-| 14h40 | **Ticket du Game Designer n°2** |
-| ensuite | Les Clans (appartenance datée, repaire), puis les Vies perdues |
-| si le temps le permet | Le chef du Clan, les alliances |
-| 15h02 | Enregistrement : gardez votre MCD ouvert pour le bloc suivant |
+Mon conseil : lisez le cahier des charges à deux, crayon en main. Complétez ensuite les éléments fournis (zone, Saison), les attributs du Joueur et du Héros, et le propriétaire actuel de chaque Trésor. Après les Tickets : les Clans (appartenance datée, repaire), puis les Vies perdues. Le chef et les alliances, seulement s'il reste du temps.
 
-Partagez-vous le travail : l'un tient la souris, l'autre écrit les règles de gestion et les hypothèses au fil de l'eau. Échangez à chaque Ticket.
+L'un tient la souris, l'autre écrit règles et hypothèses ; changez à chaque Ticket. Gardez le MCD ouvert à la fin, on s'en sert juste après.
 
 ## 6. Le Familier a dessiné un MCD [25 min]{.duree}
 
-Pour préparer ce support, le formateur a fait ce qu'un étudiant pressé ferait : il a demandé au Familier de faire le MCD, avec un prompt écrit en dix secondes, suivi du cahier des charges complet copié-collé.
+Pour préparer ce support, j'ai fait ce que ferait un étudiant pressé : j'ai demandé au Familier de faire le MCD, avec un prompt écrit en dix secondes et le cahier des charges collé en entier.
 
 ::: encadre
-### Le prompt, tel qu'il a été envoyé
+### Le prompt, tel quel
 
 ```text
 fais moi le MCD de ce cahier des charges stp, en syntaxe mocodo
@@ -249,7 +195,7 @@ fais moi le MCD de ce cahier des charges stp, en syntaxe mocodo
 ```
 :::
 
-La réponse du Familier est reproduite **telle quelle** ci-dessous. Elle n'a pas été retouchée.
+Voici sa réponse, sans aucune retouche.
 
 <!-- lint-vocabulaire: ignorer-debut (réponse du Familier citée telle quelle) -->
 
@@ -306,14 +252,14 @@ PRENDRE, 0N HÉROS, 01 VIE
 
 <!-- lint-vocabulaire: ignorer-fin -->
 
-Collé tel quel dans Mocodo, ce texte est **refusé** : trois lignes ne respectent pas la syntaxe. Une fois ces trois lignes réparées (et rien d'autre), voici le schéma obtenu.
+Ça a l'air sérieux, non ? Pourtant, collé tel quel dans Mocodo, ce texte est refusé : trois lignes ne respectent pas la syntaxe. Voici le schéma une fois ces trois lignes réparées, et rien d'autre.
 
 ![Le MCD du Familier, après réparation de ses trois fautes de syntaxe](familier-mcd-s1.svg)
 
 ::: bloc
 ### En binôme, 12 minutes
 
-Comparez le MCD du Familier **au vôtre**, et à son propre texte. Remplissez le tableau ci-dessous. Pour chaque erreur : où elle est, pourquoi c'est faux, d'après quelle phrase du cahier des charges. Visez trois erreurs, pas toutes : la mise en commun complète.
+Comparez le MCD du Familier au vôtre, et à son propre texte. Pour chaque erreur : où elle est, pourquoi c'est faux, et quelle phrase du cahier des charges le montre. Visez trois erreurs, pas toutes : la mise en commun fera le reste.
 :::
 
 <div class="remplir haut">
@@ -326,9 +272,9 @@ Comparez le MCD du Familier **au vôtre**, et à son propre texte. Remplissez le
 
 </div>
 
-### Synthèse : où le Familier aide, où il échoue, comment mieux le solliciter
+### Ce qu'on en retient
 
-On complète ensemble, après la mise en commun.
+On remplit ensemble après la mise en commun.
 
 <div class="remplir haut">
 
@@ -342,22 +288,22 @@ On complète ensemble, après la mise en commun.
 
 ## 7. Boss de fin de Séance [20 min]{.duree}
 
-L'énoncé est distribué au début du bloc. Seul, en temps limité, puis correction collective.
+Je distribue l'énoncé au début du bloc. Tu le fais seul, en temps limité, et on corrige ensemble.
 
 ## 8. Bilan [10 min]{.duree}
 
 ::: bloc
-### À retenir de la Séance 1
+### À retenir
 
-- Un MCD se **lit** à voix haute, dans les deux sens de chaque association : c'est le meilleur détecteur d'erreurs.
-- Deux concepts proches (Joueur et Héros) ne se fusionnent pas : identifiant, durée de vie et attributs les distinguent.
-- **Héritage** quand des sous-types ont des attributs propres ; **réflexive** quand une entité se lie à elle-même, avec des rôles ; **ternaire** quand trois entités participent ensemble au même fait.
-- Les **contraintes** (XT, CIF, inclusion, exclusion) et les **règles de gestion** disent ce que les cardinalités ne disent pas.
-- Le Familier produit vite un premier jet plausible. Votre travail : vérifier chaque cardinalité et chaque règle implicite contre le cahier des charges.
+- Un MCD se lit à voix haute, dans les deux sens de chaque association. C'est le meilleur détecteur d'erreurs.
+- Joueur et Héros se ressemblent, mais ce sont deux concepts : on ne les fusionne pas.
+- Héritage pour des sous-types qui ont leurs propres attributs, réflexive quand une entité se lie à elle-même, ternaire quand trois entités font partie du même fait.
+- Ce que les cardinalités ne disent pas passe par les contraintes ou les règles de gestion.
+- Le Familier sort vite un premier jet plausible. À toi de vérifier chaque cardinalité et chaque règle implicite contre le cahier des charges.
 :::
 
-### Séance 2 : mardi 10 novembre, 8h00 à 12h00
+### Demain matin, Séance 2
 
-Du MCD au MPD : on traduit le MCD de Félicia en tables, on normalise, puis on dénormalise à bon escient en mesurant le gain dans PostgreSQL. Votre environnement (un Codespace) se met en place **pendant la Séance**, en 20 minutes, sans rien installer avant. La Séance se termine par la **Note 1** (1 h 15) et par le tirage au sort des Sujets de Note 2.
+Rendez-vous mardi 10 novembre, de 8h00 à 12h00. On traduira le MCD de Félicia en tables, on normalisera, puis on dénormalisera en mesurant le gain dans PostgreSQL. Ton environnement (un Codespace) se met en place pendant la Séance, en 20 minutes. La matinée se termine par la **Note 1**, puis par le tirage au sort des Sujets de Note 2.
 
-Rien à préparer d'ici là. Si vous voulez, gardez votre fichier `felicia` : il vous servira de point de comparaison.
+Rien à préparer d'ici là. Garde juste ton fichier `felicia`, il te servira de point de comparaison. Un Héros a 9 Vies, ton MCD n'en a qu'une : sauvegarde-le.

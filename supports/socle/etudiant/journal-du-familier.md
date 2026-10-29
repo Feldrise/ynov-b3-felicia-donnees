@@ -7,30 +7,17 @@ public: Support étudiant
 
 ## Le Familier est autorisé, son usage se documente
 
-Dans ce module, l'IA générative s'appelle le **Familier** : un compagnon utile, mais qui affirme parfois des choses fausses avec beaucoup d'aplomb. Vous pouvez le solliciter partout, **y compris pendant la Note 1 et la Note 2**.
+Ici, l'IA générative s'appelle le **Familier** : un compagnon utile, qui affirme parfois des choses fausses avec beaucoup d'aplomb. Tu peux t'en servir partout, **Note 1 et Note 2 comprises**.
 
-Ce qui est évalué, c'est votre **jugement de conception** et la façon dont vous le justifiez, pas votre capacité à produire un schéma. Le Journal du Familier rend ce jugement visible : il montre ce que vous avez demandé, ce que vous avez fait de la réponse, et pourquoi.
+Je note ton **jugement de conception** et sa justification, pas le schéma. Le Journal du Familier le rend visible : ce que tu as demandé, ce que tu as fait de la réponse, et pourquoi.
 
 ::: bloc
 ### Les règles
 
-- Le Journal du Familier est une **annexe obligatoire** de chaque Note. Il compte pour **15 % de la Note 1** et **20 % de la Note 2**.
-- Une ligne par prompt envoyé au Familier, dans l'ordre chronologique.
-- Le prompt est **copié tel quel**, sans le reformuler ni le corriger. Si votre outil le permet, vous pouvez donner à la place le **lien de partage** de la conversation.
-- Pour chaque prompt, une décision : **gardé**, **rejeté** ou **modifié**, suivie de **« parce que... »**.
-- Le Journal est rendu en PDF sur Moodle, avec le reste de la Note. En Note 2, le trinôme rend un seul Journal.
+Le Journal du Familier est une **annexe obligatoire** de chaque Note : **15 % de la Note 1**, **20 % de la Note 2**. En Note 2, un seul Journal par trinôme. Il se rend en PDF sur Moodle, avec le reste de la Note.
+
+Une ligne par prompt, dans l'ordre d'envoi. Le prompt est **copié tel quel**, sans retouche, ou remplacé par le **lien de partage** de la conversation. À côté : l'outil (et le modèle, si tu le connais), la réponse en une ou deux phrases, puis ta décision, **gardé**, **rejeté** ou **modifié**, suivie de **« parce que... »**, rattaché au sujet : une règle de gestion, une contrainte chiffrée, une erreur repérée.
 :::
-
-## Ce qu'on attend dans chaque colonne
-
-| Colonne | Contenu attendu |
-|--------------|--------------------------------------------------------------------------------------|
-| N° | Le numéro du prompt, dans l'ordre où vous l'avez envoyé. |
-| Outil | Le nom du Familier utilisé (son nom commercial et, si vous le connaissez, le modèle). |
-| Prompt ou lien | Le texte exact du prompt, ou le lien de partage de la conversation. |
-| Réponse en bref | Ce que le Familier a proposé, résumé en une ou deux phrases. |
-| Décision | Gardé, rejeté ou modifié. |
-| Parce que... | La raison de votre décision, rattachée au sujet : une règle de gestion, une contrainte chiffrée, une erreur repérée. |
 
 ::: {.encadre .attention}
 ### Ce qui fait un bon « parce que... »
@@ -38,12 +25,12 @@ Ce qui est évalué, c'est votre **jugement de conception** et la façon dont vo
 - **Faible** : « rejeté parce que c'est faux ».
 - **Solide** : « rejeté parce que le Familier relie chaque Trésor à un seul Héros pour toujours, alors que le cahier des charges dit que les Trésors légendaires changent de mains ».
 
-Un bon « parce que... » cite le sujet. Un Journal où tout est « gardé » sans explication montre que vous n'avez pas exercé votre jugement.
+Un bon « parce que... » cite le sujet. Tout « gardé » sans explication, c'est un jugement qui n'a pas servi.
 :::
 
 ## Trois lignes d'exemple
 
-Ces exemples portent sur Félicia, le Fil rouge du module. Dans une Note, vos lignes porteront sur le sujet de la Note.
+Sur Félicia ; dans une Note, tes lignes porteront sur le sujet de la Note.
 
 | N° | Outil | Prompt ou lien | Réponse en bref | Décision | Parce que... |
 |----|----------|---------------------|-------------------------|---------|-----------------------------|
@@ -51,11 +38,11 @@ Ces exemples portent sur Félicia, le Fil rouge du module. Dans une Note, vos li
 | 2 | Nom de l'outil | « Donne-moi le SQL qui empêche un Héros de perdre plus de 9 Vies par Saison. » | Ajouter à la table des Héros une colonne du nombre de Vies, limitée à 9. | Rejeté | Un simple compteur perd le détail de chaque Vie perdue (moment, zone, cause), que le studio veut analyser Saison après Saison. |
 | 3 | Nom de l'outil | « Dans Neuf Vies, les Pelotes d'or appartiennent-elles au Joueur ou au Héros ? » | « Au Joueur, puisque c'est lui qui paie avec sa carte bancaire. » | Modifié | Le cahier des charges dit aussi qu'un Héros gagne des Pelotes en quête : j'ai retenu une bourse par Héros et noté cette hypothèse, à faire valider par le studio. |
 
-Si vous n'avez pas sollicité le Familier, dites-le en quelques lignes et expliquez pourquoi : c'est aussi un choix de méthode, et le Journal reste obligatoire.
+Pas de Familier du tout ? Dis-le en quelques lignes et explique pourquoi : c'est un choix de méthode, et le Journal reste obligatoire.
 
 ## Le modèle à remplir {.nouvelle-page}
 
-Rien à recréer : le modèle ci-dessous est fourni sur Moodle, à côté de ce document, sous la forme d'un fichier Word à dupliquer, `journal-du-familier-modele.docx`. Il s'ouvre dans Word, LibreOffice Writer ou Google Docs, et on y ajoute autant de lignes que nécessaire. Les trois enregistrent en PDF (Fichier, puis Enregistrer sous, Exporter ou Télécharger, format PDF) : c'est ce fichier que vous rendez.
+Ce modèle est sur Moodle en fichier Word à dupliquer (`journal-du-familier-modele.docx`), à ouvrir dans Word, LibreOffice Writer ou Google Docs ; ajoute autant de lignes que nécessaire. Enregistre-le en PDF (Fichier, puis Enregistrer sous, Exporter ou Télécharger) : c'est ce PDF que tu rends.
 
 **Nom et prénom** (ou membres du trinôme) :
 
@@ -76,7 +63,7 @@ Rien à recréer : le modèle ci-dessous est fourni sur Moodle, à côté de ce 
 | 6 | | | | | |
 :::
 
-**Bilan en trois lignes** : où le Familier vous a aidé, où il vous a trompé, ce que vous changeriez dans votre façon de le solliciter.
+**Bilan en trois lignes** : où le Familier a aidé, où il a trompé, ce que tu changerais dans ta façon de le solliciter.
 
 [ ]{.a-remplir}
 

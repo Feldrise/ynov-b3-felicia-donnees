@@ -7,20 +7,19 @@ public: Support étudiant
 
 ## À quoi sert un ADR
 
-Un **ADR** (*Architecture Decision Record*, fiche de décision d'architecture) garde la trace d'**une** décision importante : le contexte qui l'a imposée, ce qu'on a choisi, ce qu'on a écarté, et ce qu'on a accepté de perdre. Il tient sur une page. On ne le réécrit pas quand la décision change : on en écrit un nouveau, qui **remplace** l'ancien, et l'ancien garde son histoire.
+Un **ADR** (*Architecture Decision Record*, fiche de décision d'architecture) garde sur une page la trace d'**une** décision importante : le contexte qui l'a imposée, le choix, les options écartées et ce qu'on a accepté de perdre. Quand la décision change, on ne le réécrit pas : on en écrit un nouveau, qui le **remplace**.
 
 ::: bloc
-**Ce qui fait un bon ADR**
-
-- Un **contexte chiffré** : un lecteur qui n'était pas là comprend pourquoi la question s'est posée.
-- **Une** décision, écrite en une ou deux phrases.
-- **Au moins deux options écartées**, chacune avec sa raison, chiffrée si possible. Sans options écartées, on ne voit pas qu'il y a eu un choix.
-- Des **conséquences** honnêtes : ce qu'on gagne, ce qu'on accepte de perdre, ce que cela coûte à exploiter.
+Un bon ADR a un contexte chiffré, qu'un lecteur absent comprend ; une décision, en une ou deux phrases ; au moins deux options écartées, chacune avec sa raison, sans quoi on ne voit pas qu'il y a eu un choix ; et des conséquences honnêtes : le gain, la perte acceptée, le coût d'exploitation.
 :::
+
+## Le modèle d'ADR
+
+Le modèle du Patch Day est sur Moodle (`adr-modele.docx`) : il reprend les rubriques de l'exemple ci-dessous et dit quoi écrire dans chacune. Le vôtre peut tenir **en puces**, une idée par puce avec ses chiffres. Titrez-le « ADR-1 · » suivi de la décision (« La boutique reste dans PostgreSQL et... »), et faites répondre la décision à la ligne « L'ADR doit trancher » de votre carte.
 
 ## Un exemple rédigé : ADR-005 de Félicia
 
-Cet ADR prolonge la « Demande au Familier » de la Séance 3 : pour le chemin diplomatique, le Familier jugeait PostgreSQL suffisant, à condition de « valider son temps de réponse sur des données représentatives ». Ici, la mesure a été faite.
+Il prolonge la « Demande au Familier » de la Séance 3 : pour le chemin diplomatique, le Familier jugeait PostgreSQL suffisant, à condition de « valider son temps de réponse sur des données représentatives ». La mesure a été faite.
 
 ::: encadre
 ### ADR-005 · Le réseau des Clans est copié dans Neo4j pour le chemin diplomatique
@@ -46,23 +45,9 @@ Cet ADR prolonge la « Demande au Familier » de la Séance 3 : pour le chemin d
 **Familier.** Sa réponse au prompt chiffré de la Séance 3 concluait que PostgreSQL suffisait, sous réserve de mesurer (Journal du Familier, ligne 2 : modifiée, parce que la mesure dépasse la seconde au-delà de quatre niveaux). Les coûts de la copie qu'il listait sans les chiffrer (synchronisation, retards, incohérences) sont repris dans les conséquences : une minute de retard, une revérification, une alerte.
 :::
 
-## Le modèle d'ADR
-
-Le modèle à remplir pendant le Patch Day est sur Moodle : `adr-modele.docx`. Il reprend les rubriques de l'exemple. L'exemple est rédigé en phrases ; le vôtre peut tenir **en puces**, une idée par puce avec ses chiffres.
-
-| Rubrique | Ce que vous écrivez |
-|------------------|--------------------------------------------------------------------------------------|
-| Titre | ADR-1, puis la décision en une phrase (« La boutique reste dans PostgreSQL et... ») |
-| Statut | accepté ; s'il remplace une décision de votre V1, laquelle |
-| Contexte | l'événement de la carte Patch Day et ses chiffres, confrontés aux chiffres de votre sujet ; les besoins et les bases touchés |
-| Décision | la réponse à la question que votre carte demande de trancher (sa ligne « L'ADR doit trancher ») : ce qui change dans l'architecture, en une ou deux phrases ; la source de vérité de chaque donnée concernée |
-| Options écartées | au moins deux, chacune avec sa raison (ligne de la grille de choix, chiffre) |
-| Conséquences | le gain ; ce que vous acceptez de perdre (un retard, une question qu'on ne peut plus poser, une donnée recopiée) ; le coût d'exploitation |
-| Familier | les lignes du Journal du Familier qui ont nourri la décision, et ce que vous en avez fait |
-
 ## La matrice « besoin → paradigme → justification » {.nouvelle-page}
 
-La matrice montre, besoin par besoin, que chaque base répond à un critère chiffré. Le modèle à remplir pour la V1 est sur Moodle : `matrice-de-decision-modele.docx`. Voici deux lignes remplies pour Félicia ; la première reprend l'exemple de justification de la grille de choix.
+Le modèle de la V1 est sur Moodle : `matrice-de-decision-modele.docx`. Voici deux lignes pour Félicia ; la première reprend l'exemple de justification de la grille de choix.
 
 | N° | Besoin : la question et sa fréquence | Chiffres décisifs | Paradigme et base | Justification : ligne de la grille et chiffre | Source de vérité et synchronisation | Ce qu'on accepte de perdre |
 |---|-------------------|--------------|----------|----------------------|------------------|--------------|
@@ -73,7 +58,7 @@ La matrice montre, besoin par besoin, que chaque base répond à un critère chi
 ### Les erreurs de matrice les plus fréquentes
 
 - Une justification **sans chiffre** (« MongoDB est flexible ») ou **sans ligne de la grille** (« c'est plus rapide »).
-- Une base par besoin, sans jamais se demander si la source relationnelle suffisait.
-- Une colonne « source de vérité » vide : deux bases écrivent la même donnée, et personne ne sait laquelle croire.
-- Une colonne « ce qu'on accepte de perdre » remplie par « rien » pour un paradigme autre que le relationnel : chaque choix a un prix.
+- Une base par besoin, sans se demander si la source relationnelle suffisait.
+- Une « source de vérité » vide : deux bases écrivent la même donnée, laquelle croire ?
+- « Rien » dans « ce qu'on accepte de perdre » pour un autre paradigme que le relationnel : chaque choix a un prix.
 :::
