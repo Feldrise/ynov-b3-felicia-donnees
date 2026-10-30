@@ -6,7 +6,7 @@ PYTHON ?= python3
 DC := docker compose -f compose.yaml
 
 .DEFAULT_GOAL := aide
-.PHONY: aide up charger etat down psql sql mongosh redis-cli cqlsh cypher-shell donnees outils schemas pdf lint export verify
+.PHONY: aide up charger etat down psql sql mongosh redis-cli cqlsh cypher-shell donnees outils schemas pdf lint export moodle verify
 
 aide: ## affiche cette aide
 	@grep -hE '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-13s %s\n", $$1, $$2}'
@@ -65,6 +65,9 @@ lint: ## lint du vocabulaire du glossaire et de la charte sur les supports (form
 
 export: ## construit l'export étudiant dans build/export-etudiant, sans corrigé (formateur)
 	$(PYTHON) outils/exporter.py
+
+moodle: pdf ## dépôt Moodle des deux Notes : sujet, critères et modalités (build/moodle-notes.zip) (formateur)
+	$(PYTHON) outils/moodle.py
 
 verify: ## contrôle de fin complet, de bases neuves jusqu'à leur destruction
 	$(PYTHON) outils/verifier.py
